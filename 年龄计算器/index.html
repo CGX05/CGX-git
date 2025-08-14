@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>年龄计算器</title>
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+    <div class="con">
+        <h1>年龄计算器</h1>
+        <label for="birthdate">请输入您的年龄：</label>
+        <input type="date" name="" id="birthdate">
+        <button >计算年龄</button>
+        <p id="age"></p>
+    </div>
+    <script>
+        document.querySelector('button').onclick=function(){
+            const birthdateInput=document.getElementById('birthdate')
+            const birthdate=new Date(birthdateInput.value)
+            const date=new Date()
+            // console.log(date)
+            // console.log(birthdate)
+
+            if (isNaN(birthdate.getTime())) {
+                document.getElementById('age').textContent = '请输入有效的出生日期。'
+                return
+            }
+
+            let age = date.getFullYear() - birthdate.getFullYear()
+            // console.log(age)
+            const monthDiff = date.getMonth() - birthdate.getMonth()
+            if (monthDiff < 0 || (monthDiff === 0 && date.getDate() < birthdate.getDate())) {
+                age--
+            }
+            document.getElementById('age').textContent="您今年"+age+"岁！"
+    }
+
+
+    </script>
+</body>
+</html>
