@@ -1,0 +1,9 @@
+# 忽略 IDEA 相关配置文件夹
+.idea/
+
+# 忽略myblog的编译缓存
+myblog/__pycache__/
+
+# 忽略/Personal的相关配置
+Personal/node_modules/
+Personal/.vscode/
